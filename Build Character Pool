@@ -1,0 +1,24 @@
+def build_character_pool(use_upper, use_lower, use_digits, use_special):
+    """
+    Create a character pool and list of required characters for inclusion.
+    Returns:
+        - character_pool: all possible characters
+        - required_chars: one guaranteed character from each type
+    """
+    character_pool = ""
+    required_chars = []
+
+    if use_upper:
+        character_pool += string.ascii_uppercase
+        required_chars.append(random.choice(string.ascii_uppercase))
+    if use_lower:
+        character_pool += string.ascii_lowercase
+        required_chars.append(random.choice(string.ascii_lowercase))
+    if use_digits:
+        character_pool += string.digits
+        required_chars.append(random.choice(string.digits))
+    if use_special:
+        character_pool += string.punctuation
+        required_chars.append(random.choice(string.punctuation))
+
+    return character_pool, required_chars
