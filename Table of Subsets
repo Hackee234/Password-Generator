@@ -1,0 +1,8 @@
+Subset No.	Function / Part	Description
+1	Imports	Load required libraries
+2	get_user_preferences()	Collect user input
+3	build_character_pool()	Build character set + minimum guaranteed chars
+4	generate_password()	Generate and shuffle password
+5	copy_to_clipboard()	(Optional) Copy password to clipboard
+6	main()	Coordinate all other subsets
+7	if __name__ == "__main__"	Start of program execution
