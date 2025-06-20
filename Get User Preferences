@@ -1,0 +1,27 @@
+def get_user_preferences():
+    """
+    Ask the user for password length and types of characters to include.
+    Returns a tuple of user-selected options.
+    """
+    print("🔐 Welcome to the Password Generator\n")
+
+    while True:
+        try:
+            length = int(input("Enter desired password length (min 4): "))
+            if length < 4:
+                print("❗ Password should be at least 4 characters.")
+                continue
+            break
+        except ValueError:
+            print("❗ Please enter a valid number.")
+
+    use_upper = input("Include UPPERCASE letters (A-Z)? (y/n): ").strip().lower() == 'y'
+    use_lower = input("Include lowercase letters (a-z)? (y/n): ").strip().lower() == 'y'
+    use_digits = input("Include digits (0-9)? (y/n): ").strip().lower() == 'y'
+    use_special = input("Include special characters (!@#...)? (y/n): ").strip().lower() == 'y'
+
+    if not (use_upper or use_lower or use_digits or use_special):
+        print("❌ Select at least one character type.")
+        return get_user_preferences()
+
+    return length, use_upper, use_lower, use_digits, use_special
