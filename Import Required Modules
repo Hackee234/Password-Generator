@@ -1,0 +1,9 @@
+import string
+import random
+
+# Optional: Clipboard support (if available)
+try:
+    import pyperclip
+    CLIPBOARD_AVAILABLE = True
+except ImportError:
+    CLIPBOARD_AVAILABLE = False
