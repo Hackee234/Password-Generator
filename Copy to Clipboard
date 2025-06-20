@@ -1,0 +1,9 @@
+def copy_to_clipboard(password):
+    """
+    Copy the password to clipboard if pyperclip is installed.
+    """
+    if CLIPBOARD_AVAILABLE:
+        pyperclip.copy(password)
+        print("📋 Password copied to clipboard.")
+    else:
+        print("⚠️ pyperclip not installed. Clipboard copy not available.")
