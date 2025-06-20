@@ -1,0 +1,26 @@
+def main():
+    """
+    Main driver function that runs the password generator.
+    """
+    while True:
+        # Get user input
+        length, upper, lower, digits, special = get_user_preferences()
+
+        # Build character set
+        character_pool, required_chars = build_character_pool(upper, lower, digits, special)
+
+        # Generate the password
+        password = generate_password(length, character_pool, required_chars)
+
+        # Show password
+        print("\n✅ Your Secure Password:\n" + password)
+
+        # Copy to clipboard
+        if input("Copy to clipboard? (y/n): ").strip().lower() == 'y':
+            copy_to_clipboard(password)
+
+        # Ask if the user wants to generate another
+        again = input("\nGenerate another password? (y/n): ").strip().lower()
+        if again != 'y':
+            print("🔒 Thank you for using the Password Generator.")
+            break
